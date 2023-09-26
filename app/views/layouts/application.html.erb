@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>SyukuhakuApp</title>
+    <title>宿泊予約アプリ</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
+    <header>
+      <nav class="navbar">
+        <div class="container-fluid">
+          <a href="/"><img class="logo" alt="サイトロゴ" src="https://rails-02-sample.herokuapp.com/assets/common/logo.png"></a>
+          <div class="dropdown">
+            <div class="NavProfile" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="avatar" alt="アバター" src="https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png">
+              <span class="profile-name"></span>
+              <link_to "ログイン" , 
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <footer class="Footer"></footer>
     <%= yield %>
   </body>
 </html>

@@ -2,30 +2,50 @@
 <html>
   <head>
     <title>宿泊予約アプリ</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <%= csrf_meta_tags %> <%= csp_meta_tag %> <%= stylesheet_link_tag
+    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
       <nav class="navbar">
         <div class="container-fluid">
-          <a href="/"><img class="logo" alt="サイトロゴ" src="https://rails-02-sample.herokuapp.com/assets/common/logo.png"></a>
+          <a href="/"
+            ><img
+              class="logo"
+              alt="サイトロゴ"
+              src="https://rails-02-sample.herokuapp.com/assets/common/logo.png"
+          /></a>
           <div class="dropdown">
-            <div class="NavProfile" id="dropdown-button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="avatar" alt="アバター" src="https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png">
+            <div
+              class="NavProfile"
+              id="dropdown-button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                class="avatar"
+                alt="アバター"
+                src="https://rails-02-sample.herokuapp.com/assets/common/default-avatar-7a6cbfd7993e89f24bfc888f4a035a83c6f1428b8bdc47eed9095f2799a40153.png"
+              />
               <span class="profile-name"></span>
-              <link_to "ログイン" , 
-              
+              <%= link_to "ログイン" , new_user_session_path %>
             </div>
           </div>
         </div>
       </nav>
     </header>
+
+    <% if flash[:notice] %>
+    <div class="notification is-info">
+      <p class="notice"><% notice %></p>
+    </div>
+    <% end %> <% if flash[:alert] %>
+    <div class="notification is-danger">
+      <p class="alert"><% alert %></p>
+    </div>
+
     <footer class="Footer"></footer>
     <%= yield %>
   </body>
